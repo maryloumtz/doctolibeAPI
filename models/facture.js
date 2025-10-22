@@ -21,9 +21,9 @@ module.exports = (Sequelize, DataTypes) => {
         }
     });
 
-    Factures.associate = function(models) {
-        Factures.belongTo(models.Rendez_vous, {
-            foreingKey: 'id_rendezvous',
+    Factures.associate = (models) => {
+        Factures.belongsTo(models.Rendez_vous, {
+            foreignKey: 'id_rendezvous',
             as: 'rendezvous'
         })
     };

@@ -29,13 +29,13 @@ module.exports = (Sequelize, DataTypes) => {
         }
     }); 
 
-    Rendez_vous.associate = function(models) {
-        Rendez_vous.belongTo(models.Patients, {
-            foreingKey: 'id_patient',
+    Rendez_vous.associate = (models) => {
+        Rendez_vous.belongsTo(models.Patients, {
+            foreignKey: 'id_patient',
             as: 'patient'
         });
-        Rendez_vous.belongTo(models.Praticien, {
-            foreingKey: 'id_praticien',
+        Rendez_vous.belongsTo(models.Praticiens, {
+            foreignKey: 'id_praticien',
             as: 'praticien'
         });
     };
